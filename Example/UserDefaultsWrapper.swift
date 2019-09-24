@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserDefaultsWrapper {
+class UserDefaultsWrapper {
 
     // MARK: - singleton
     
