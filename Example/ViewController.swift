@@ -52,18 +52,16 @@ class ViewController: UIViewController {
     
     //    MARK: - Private Functions
     
-    private let userNameKey  = "userName"
-    private let fontSizeKey = "fontSize"
-    private let isUpperCasedKey = "isUpperCased"
-    
     private func loadDefaultSettings() {
-        if let isUpper = UserDefaults.standard.value(forKey: isUpperCasedKey) as? Bool {
+        if let isUpper = UserDefaultsWrapper.wrapper.getUppercaseText() {
             isUpperCased = isUpper
         }
-        if let name = UserDefaults.standard.value(forKey: userNameKey) as? String {
+        
+        if let name = UserDefaultsWrapper.wrapper.getUserName() {
             userName = name
         }
-        if let size = UserDefaults.standard.value(forKey: fontSizeKey) as? Double {
+        
+        if let size = UserDefaultsWrapper.wrapper.getFontSize() {
             fontSize = size
         }
     }
