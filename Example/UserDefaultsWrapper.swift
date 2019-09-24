@@ -30,6 +30,18 @@ struct UserDefaultsWrapper {
     
     // MARK: - setters
     
+    func store(isUppedCased: Bool) {
+        UserDefaults.standard.set(isUppedCased, forKey: isUpperCasedKey)
+    }
+    
+    func store(userName: String) {
+         UserDefaults.standard.set(userName, forKey: userNameKey)
+    }
+    
+    func store(fontSize: Double){
+        UserDefaults.standard.set(fontSize, forKey: fontSizeKey)
+    }
+    
     // MARK: - private keyNames
     
     private let userNameKey  = "userName"

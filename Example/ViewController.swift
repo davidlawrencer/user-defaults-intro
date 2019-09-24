@@ -14,21 +14,21 @@ class ViewController: UIViewController {
         didSet{
             performFontSizeUpdates()
             performFontCapitalizationUpdates()
-            UserDefaults.standard.set(fontSize, forKey: fontSizeKey)
+            UserDefaultsWrapper.wrapper.store(fontSize: fontSize)
         }
     }
     
     var userName: String = "" {
         didSet {
             performLabelTextUpdates()
-            UserDefaults.standard.set(userName, forKey: userNameKey)
+            UserDefaultsWrapper.wrapper.store(userName: userName)
         }
     }
     
     var isUpperCased: Bool = true {
         didSet {
             performFontCapitalizationUpdates()
-            UserDefaults.standard.set(isUpperCased, forKey: isUpperCasedKey)
+            UserDefaultsWrapper.wrapper.store(isUppedCased: isUpperCased)
         }
     }
     
